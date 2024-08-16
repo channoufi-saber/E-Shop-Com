@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PaypalService } from 'src/app/services/paypal.service';
+import { environment } from 'src/environments/environment';
 import { ProductService } from '../services/product.service';
 
+declare var paypal: any;
 
 @Component({
   selector: 'app-product-detail',
@@ -9,12 +12,14 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-
- product: any
-
+  @ViewChild('paypal', { static: true })
+  paypalElement: any
+  product: any
+  clientId: string = environment.clientId
   constructor(private activatedRoute: ActivatedRoute,
-    public productService: ProductService
-    ) { }
+    public productService: ProductService,
+    public paypalService: PaypalService
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(url => {
@@ -26,6 +31,36 @@ export class ProductDetailComponent implements OnInit {
           this.product = data
         })
     })
+
+    this.paypalService.initiate(this.clientId).subscribe(
+      () => paypal.Buttons({
+        createOrder: (data: any, actions: any) => {
+          return actions.order.create({
+            purchase_units: [
+              {
+                name: this.product.brands,
+                description: this.product.description,
+                amount: {
+                  currency_code: 'USD',
+                  value: this.product.price,
+                }
+              }
+            ]
+          });
+        },
+
+        onApprove: async (data: any, actions: any) => {
+          const order = await actions.order.capture();
+          console.log('order', order)
+        },
+        onCancel: (data: any, actions: any) => {
+          return actions.redirect('/')
+        },
+        onError: (err: any) => {
+          console.log('Error', err)
+        }
+      }).render(this.paypalElement.nativeElement)
+    );
   }
 
 }
