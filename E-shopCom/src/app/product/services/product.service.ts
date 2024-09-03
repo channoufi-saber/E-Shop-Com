@@ -23,6 +23,17 @@ export class ProductService {
 
   }
 
+  createProduct(product: any) {
+    return this.http.post(this.apiUrl + '/product', product).subscribe(data => console.log(data))
+  }
+
+  deleteProduct(id: any) {
+    return this.http.delete(this.apiUrl + '/product/' + id, { responseType: 'text' })
+  }
+
+  editProduct(id: any, product: any) {
+    return this.http.patch(this.apiUrl + '/product/' + id, product)
+  }
 }
 
 

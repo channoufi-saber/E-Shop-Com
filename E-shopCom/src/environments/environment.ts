@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  clientId: "clientId"
+  clientId: "AXjvVWT0dQes6f5wRLy-QrApo0VV9vFEtQIzHoZykByghD_J6VxDztcLz-vcBldI8BD-hunt9uwbtdAb"
 };
 
 /*

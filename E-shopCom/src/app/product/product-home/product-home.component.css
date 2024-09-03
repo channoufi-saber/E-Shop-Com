@@ -7,12 +7,12 @@
 .collection-header {
 	font-weight: 600;
 	font-size: 2rem;
+
 }
 
 .header {
 	margin-top: 4rem;
 	margin-bottom: 4rem;
-	/* margin-left: 2.9rem; */
 
 	display: flex;
 	justify-content: space-around;
@@ -20,7 +20,8 @@
 }
 
 
-/* Landing IMG start */
+
+
 .land-img {
 	width: 100%;
 }
@@ -29,7 +30,6 @@
 
 
 
-/* Landing IMG end */
 
 
 .btn-container {
@@ -77,4 +77,37 @@
 
 	justify-content: center;
 	margin-top: 2rem;
+}
+
+
+@media screen and (min-width: 768px) {
+	.land-img {
+		margin: 2.5rem 0 0 1rem;
+	}
+
+	.btn-container {
+		display: none;
+	}
+
+	.lang-img-container {
+		grid-area: left;
+	}
+
+	.product-list-container {
+		grid-area: right;
+	}
+
+	.desktop-view {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"left right"
+			"left right"
+		;
+	}
+
+	h2 br {
+		display: none;
+	}
 }

@@ -1,16 +1,10 @@
 <div class="nav-bar">
-  <div class="nav-bar-cart">
-    <i class='bx bx-cart bx-sm'></i>
-  </div>
   <div class="nav-bar-logo">
-    LOGO
+    <img class="logo-img" src="https://ik.imagekit.io/bprw8mk45/products/a%CC%82__Pngtreea%CC%82__creative_company_logo_1197025_LuZ_u5Kgi.png?ik-sdk-version=javascript-1.4.3&updatedAt=1663302070049" alt="">
   </div>
-  <div class="nav-bar-menu">
-    <i class='bx bx-menu bx-sm'></i>
+  <div>
+    <i class='bx bx-menu bx-lg' style='color: white'></i>
   </div>
-</div>
-<div>
-  <img class="banner" src="https://ik.imagekit.io/bprw8mk45/products/bags/bag_banner_EX3kwvE0J.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653661978210" alt="">
 </div>
 <div class="header">
   <h2 class="collection-header">Bags</h2>
@@ -22,7 +16,7 @@
   <h4 class="btn">Travel Bags</h4>
 </div>
 <div class="product-list-container">
-  <div class="product-list">
+  <div class="product-list" [routerLink]="['purse']">
     <img class="product-img" src="https://ik.imagekit.io/bprw8mk45/products/bags/purse-removebg-preview_Dg2F0Tc4V.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653660837379" alt="">
     <h5 class="product-list-text">Purses</h5>
   </div>
@@ -34,7 +28,7 @@
     <img class="product-img" src="https://ik.imagekit.io/bprw8mk45/products/bags/201868254-1-black_2b00csX-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653660806986" alt="">
     <h5 class="product-list-text">Shoulder bags</h5>
   </div>
-  <div class="product-list">
+  <div class="product-list" [routerLink]="['travelbags']">
     <img class="product-img" src="https://ik.imagekit.io/bprw8mk45/products/bags/202649543-1-pink-removebg-preview_VSV6qfVeQ.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653660786099" alt="">
     <h5 class="product-list-text">Travel bags</h5>
   </div>

@@ -84,6 +84,149 @@
     text-align: center;
 }
 
+
+.carousel-container {
+    display: none;
+}
+
+/* Desktop view */
+
+@media screen and (min-width: 768px) {
+    .header {
+        grid-area: header;
+        margin-top: 0rem;
+    }
+
+    .product-list {
+        grid-area: img;
+        margin: 1.5rem auto 0;
+    }
+
+    .product-price {
+        grid-area: price;
+    }
+
+    .product-info {
+        grid-area: info;
+    }
+
+    .buy-btn-container {
+        grid-area: btn;
+        margin-right: auto;
+    }
+
+    .carousel-container {
+        grid-area: carousel;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .product-list-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "img header"
+            "img price"
+            "img info"
+        ;
+    }
+
+    .lower-display {
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "carousel btn"
+        ;
+    }
+
+    .collection-header {
+        text-align: left;
+    }
+
+    .buy-btn {
+        padding: 14px 140px 14px;
+    }
+}
+
+
+
+
+
+
+
+/* @media screen and (min-width: 768px) {
+    .product-list {
+        grid-area: img;
+        margin: 1.5rem auto 0;
+
+    }
+    .header {
+        grid-area: header;
+    }
+    .product-price {
+        grid-area: price;
+    }
+    .product-info {
+        grid-area: info;
+    }
+    .buy-btn-container {
+        grid-area: btn;
+        margin-right: auto;
+    }
+    .carousel-container {
+        display: block;
+        grid-area: carousel;
+    }
+
+    .product-list-container {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "img header header"
+        "img price price"
+        "img info info"
+        ;
+
+    }   
+
+    .lower-display {
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "carousel btn"
+        ;
+    }
+
+    .collection-header {
+        font-weight: 600;
+        font-size: 1.3rem;
+        text-align: left;
+    }
+
+    .buy-btn {
+        padding: 14px 140px 14px;
+    }
+
+    .header {
+        margin-top: 0;
+    
+    } 
+} */
+
+
+
+
+
+
+
+
+
 .paypal-btn {
     text-align: center;
     margin: 0 auto;

@@ -10,22 +10,26 @@
   </div>
 </div>
 <div>
-  <img class="banner" src="https://ik.imagekit.io/bprw8mk45/products/bags/bag_banner_EX3kwvE0J.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653661978210" alt="">
+  <img class="banner" src="https://ik.imagekit.io/bprw8mk45/products/bag_banner_EX3kwvE0J000_RT_4unaVA.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1663054195897" alt="">
 </div>
 <div *ngIf="product">
-  <div class="header">
-    <h4 class="collection-header">{{product.brands}}</h4>
-  </div>
   <div class="product-list-container">
+    <div class="header">
+      <h4 class="collection-header">{{product.brands}}</h4>
+    </div>
     <div class="product-list">
       <img class="product-img" [src]="product.imgUrl1" alt="">
     </div>
     <div class="product-price">
-      {{product.price}}
+      {{product.price | currency: 'USD'}}
     </div>
     <div class="product-info">
       {{product.description}}
     </div>
+  </div>
+  <div class="lower-display">
+    <carousel [images]="images" [height]=90 [width]=230 [counter]="true" [arrowsOutside]="true" class="carousel-container">
+    </carousel>
   </div>
 </div>
 <div class="paypal-btn">

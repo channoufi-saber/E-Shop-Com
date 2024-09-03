@@ -14,6 +14,23 @@ export class SubCategoryComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, public productService: ProductService) {}
 
   ngOnInit(): void {
+    this.fetchProduct()
+
+  }
+
+  deleteProduct(id: any) {
+    this.productService.deleteProduct(id).subscribe(
+      res => {
+        if (res === 'DELETED') {
+          this.fetchProduct()
+        }
+        return
+      }
+
+    )
+  }
+
+  fetchProduct() {
     this.activatedRoute.params.subscribe(
       (data: any) => { 
         console.log('data', data['id'])
@@ -21,13 +38,16 @@ export class SubCategoryComponent implements OnInit {
         this.productService.getProductsBySubCategory(data['id']).subscribe(
           products => {
             console.log('products', products)
-            this.subProducts = products
+            if (Object.keys(products).length !== 0) {
+              this.subProducts = products
+            } else {
+              this.subProducts = undefined
+            }
           }
         )
     
       }
 
     )
-
   }
 }

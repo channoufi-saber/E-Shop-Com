@@ -70,7 +70,7 @@ export class ProductService {
       throw new HttpException('No product found!!', HttpStatus.NOT_FOUND)
     }
     await this.productRepository.remove(findProduct)
-    return 'the product is deleted.'
+    return 'DELETED'
   }
 
   async findProductsByCategory(name: string) {

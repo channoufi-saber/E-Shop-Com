@@ -14,7 +14,19 @@ declare var paypal: any;
 export class ProductDetailComponent implements OnInit {
   @ViewChild('paypal', { static: true })
   paypalElement: any
+
   product: any
+
+  images = [
+    { path: 'https://ik.imagekit.io/bprw8mk45/products/bags_300_vKpy1UGw8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653603859448' },
+    { path: 'https://ik.imagekit.io/bprw8mk45/products/bags_300_vKpy1UGw8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653603859448' },
+    { path: 'https://ik.imagekit.io/bprw8mk45/products/bags_300_vKpy1UGw8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653603859448' },
+    { path: 'https://ik.imagekit.io/bprw8mk45/products/bags_300_vKpy1UGw8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653603859448' },
+    { path: 'https://ik.imagekit.io/bprw8mk45/products/bags_300_vKpy1UGw8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653603859448' },
+    { path: 'https://ik.imagekit.io/bprw8mk45/products/bags_300_vKpy1UGw8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653603859448' },
+    { path: 'https://ik.imagekit.io/bprw8mk45/products/bags_300_vKpy1UGw8.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653603859448' },
+  ]
+
   clientId: string = environment.clientId
   constructor(private activatedRoute: ActivatedRoute,
     public productService: ProductService,
